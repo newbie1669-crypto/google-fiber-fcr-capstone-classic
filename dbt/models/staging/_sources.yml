@@ -1,0 +1,43 @@
+# models/staging/sources.yml
+# ประกาศ raw tables ใน BigQuery เป็น dbt sources
+
+version: 2
+
+sources:
+  - name: fiber
+    database: gbi-test          # ← GCP Project ID
+    schema: fiber               # ← BigQuery dataset name
+    description: "Raw Google Fiber call center data จาก 3 markets"
+
+    tables:
+      - name: market_1
+        description: "Raw call data สำหรับ Market 1"
+        columns:
+          - name: date_created
+            description: "วันที่สร้าง record"
+          - name: contacts_n
+            description: "จำนวน first contacts"
+          - name: contacts_n_1
+            description: "จำนวน follow-up contacts วันที่ 1"
+          - name: contacts_n_2
+            description: "จำนวน follow-up contacts วันที่ 2"
+          - name: contacts_n_3
+            description: "จำนวน follow-up contacts วันที่ 3"
+          - name: contacts_n_4
+            description: "จำนวน follow-up contacts วันที่ 4"
+          - name: contacts_n_5
+            description: "จำนวน follow-up contacts วันที่ 5"
+          - name: contacts_n_6
+            description: "จำนวน follow-up contacts วันที่ 6"
+          - name: contacts_n_7
+            description: "จำนวน follow-up contacts วันที่ 7"
+          - name: new_type
+            description: "ประเภทของ contact"
+          - name: new_market
+            description: "Market identifier"
+
+      - name: market_2
+        description: "Raw call data สำหรับ Market 2"
+
+      - name: market_3
+        description: "Raw call data สำหรับ Market 3"
