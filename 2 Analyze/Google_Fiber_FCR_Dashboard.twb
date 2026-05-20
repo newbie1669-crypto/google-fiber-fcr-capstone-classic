@@ -1,0 +1,359 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<workbook source-build='2021.4.0' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' />
+    <datasource caption='Google Fiber Data' inline='true' name='textscan.DS1' version='18.1'>
+      <connection class='textscan'
+                  directory='C:\Users\newbi\Documents\Local_Documents\google-fiber-fcr-capstone\2 Analyze'
+                  filename='google_fiber_case_dashboard_data.csv'
+                  header='yes'
+                  locale='en_US'
+                  separator=','>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>date_created</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[date_created]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>date_created</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>contacts_n</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[contacts_n]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>contacts_n</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>contacts_n_1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[contacts_n_1]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>contacts_n_1</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>contacts_n_2</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[contacts_n_2]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>contacts_n_2</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>contacts_n_3</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[contacts_n_3]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>contacts_n_3</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>contacts_n_4</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[contacts_n_4]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>contacts_n_4</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>contacts_n_5</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[contacts_n_5]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>contacts_n_5</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>contacts_n_6</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[contacts_n_6]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>contacts_n_6</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>contacts_n_7</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[contacts_n_7]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>contacts_n_7</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>new_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[new_type]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>new_type</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>new_market</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[new_market]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>new_market</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+
+      <aliases enabled='yes' />
+
+      <!-- Raw dimensions -->
+      <column datatype='date'    name='[date_created]' role='dimension' type='ordinal' />
+      <column datatype='string'  name='[new_type]'     role='dimension' type='nominal' />
+      <column datatype='string'  name='[new_market]'   role='dimension' type='nominal' />
+
+      <!-- Raw measures -->
+      <column datatype='integer' name='[contacts_n]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[contacts_n_1]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[contacts_n_2]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[contacts_n_3]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[contacts_n_4]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[contacts_n_5]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[contacts_n_6]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[contacts_n_7]' role='measure' type='quantitative' />
+
+      <!-- Calculated fields -->
+      <column caption='Type Label' datatype='string' name='[Calculation_TypeLabel]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='CASE [new_type]&#10;WHEN &quot;type_1&quot; THEN &quot;Internet&quot;&#10;WHEN &quot;type_2&quot; THEN &quot;Account&quot;&#10;WHEN &quot;type_3&quot; THEN &quot;Technician&quot;&#10;WHEN &quot;type_4&quot; THEN &quot;Billing&quot;&#10;WHEN &quot;type_5&quot; THEN &quot;Other&quot;&#10;ELSE [new_type]&#10;END' />
+      </column>
+
+      <column caption='Total Repeat Calls' datatype='integer' name='[Calculation_TotalRepeat]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[contacts_n_1]+[contacts_n_2]+[contacts_n_3]+[contacts_n_4]+[contacts_n_5]+[contacts_n_6]+[contacts_n_7]' />
+      </column>
+
+      <column caption='Is Repeat Caller' datatype='boolean' name='[Calculation_IsRepeat]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[contacts_n_1]+[contacts_n_2]+[contacts_n_3]+[contacts_n_4]+[contacts_n_5]+[contacts_n_6]+[contacts_n_7] &gt; 0' />
+      </column>
+
+      <column caption='Repeat Callers Count' datatype='integer' name='[Calculation_RepeatCount]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [contacts_n_1]+[contacts_n_2]+[contacts_n_3]+[contacts_n_4]+[contacts_n_5]+[contacts_n_6]+[contacts_n_7] &gt; 0 THEN 1 ELSE 0 END' />
+      </column>
+
+      <column caption='Avg Repeat Calls (if repeat)' datatype='real' name='[Calculation_AvgRepeat]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [contacts_n_1]+[contacts_n_2]+[contacts_n_3]+[contacts_n_4]+[contacts_n_5]+[contacts_n_6]+[contacts_n_7] &gt; 0 THEN [contacts_n_1]+[contacts_n_2]+[contacts_n_3]+[contacts_n_4]+[contacts_n_5]+[contacts_n_6]+[contacts_n_7] ELSE NULL END' />
+      </column>
+    </datasource>
+  </datasources>
+
+  <worksheets>
+    <worksheet name='Total Contacts'>
+      <table><view>
+          <datasources>
+            <datasource caption='Google Fiber Data' name='textscan.DS1' />
+          </datasources>
+          <datasource-dependencies datasource='textscan.DS1'>
+            <column datatype='integer' name='[contacts_n]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <rows />
+          <cols />
+          <marks class='text'>
+            <encoding attr='text' field='[SUM([contacts_n])]' type='quantitative' />
+          </marks>
+          <style>
+            <style-rule element='mark'><encoding attr='font-size' value='24' /></style-rule>
+          </style>
+      </view></table>
+    </worksheet>
+
+    <worksheet name='Repeat Callers'>
+      <table><view>
+          <datasources>
+            <datasource caption='Google Fiber Data' name='textscan.DS1' />
+          </datasources>
+          <datasource-dependencies datasource='textscan.DS1'>
+            <column datatype='integer' name='[Calculation_RepeatCount]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <rows />
+          <cols />
+          <marks class='text'>
+            <encoding attr='text' field='[SUM([Calculation_RepeatCount])]' type='quantitative' />
+          </marks>
+      </view></table>
+    </worksheet>
+
+    <worksheet name='Avg Repeat Calls'>
+      <table><view>
+          <datasources>
+            <datasource caption='Google Fiber Data' name='textscan.DS1' />
+          </datasources>
+          <datasource-dependencies datasource='textscan.DS1'>
+            <column datatype='real' name='[Calculation_AvgRepeat]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <rows />
+          <cols />
+          <marks class='text'>
+            <encoding attr='text' field='[AVG([Calculation_AvgRepeat])]' type='quantitative' />
+          </marks>
+      </view></table>
+    </worksheet>
+
+    <worksheet name='Top Problem Type'>
+      <table><view>
+          <datasources>
+            <datasource caption='Google Fiber Data' name='textscan.DS1' />
+          </datasources>
+          <datasource-dependencies datasource='textscan.DS1'>
+            <column datatype='string' name='[Calculation_TypeLabel]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[contacts_n]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <rows>[Calculation_TypeLabel]</rows>
+          <cols>[SUM([contacts_n])]</cols>
+          <sort column='[SUM([contacts_n])]' direction='DESC' />
+          <marks class='bar' />
+      </view></table>
+    </worksheet>
+
+    <worksheet name='Repeats Over Time'>
+      <table><view>
+          <datasources>
+            <datasource caption='Google Fiber Data' name='textscan.DS1' />
+          </datasources>
+          <datasource-dependencies datasource='textscan.DS1'>
+            <column datatype='date' name='[date_created]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[contacts_n]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <rows>[SUM([contacts_n])]</rows>
+          <cols>[WEEK([date_created])]</cols>
+          <marks class='bar' />
+          <style>
+            <style-rule element='header'><encoding attr='show' value='false' /></style-rule>
+          </style>
+      </view></table>
+    </worksheet>
+
+    <worksheet name='Market and Problem Type'>
+      <table><view>
+          <datasources>
+            <datasource caption='Google Fiber Data' name='textscan.DS1' />
+          </datasources>
+          <datasource-dependencies datasource='textscan.DS1'>
+            <column datatype='string' name='[Calculation_TypeLabel]' role='dimension' type='nominal' />
+            <column datatype='string' name='[new_market]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[contacts_n_1]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <rows>[Calculation_TypeLabel]</rows>
+          <cols>[SUM([contacts_n_1])]</cols>
+          <marks class='bar'>
+            <encoding attr='color' field='[new_market]' type='nominal' />
+          </marks>
+          <sort column='[SUM([contacts_n_1])]' direction='DESC' />
+      </view></table>
+    </worksheet>
+
+    <worksheet name='Repeat Calls by Date'>
+      <table><view>
+          <datasources>
+            <datasource caption='Google Fiber Data' name='textscan.DS1' />
+          </datasources>
+          <datasource-dependencies datasource='textscan.DS1'>
+            <column datatype='date' name='[date_created]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[contacts_n_1]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[contacts_n_2]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[contacts_n_3]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Calculation_TotalRepeat]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <rows>[date_created]</rows>
+          <cols>[Measure Names]</cols>
+          <filter class='categorical' column='[Measure Names]'>
+            <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[Measure Names]' member='SUM(contacts_n_1)' />
+              <groupfilter function='member' level='[Measure Names]' member='SUM(contacts_n_2)' />
+              <groupfilter function='member' level='[Measure Names]' member='SUM(contacts_n_3)' />
+              <groupfilter function='member' level='[Measure Names]' member='SUM(Calculation_TotalRepeat)' />
+            </groupfilter>
+          </filter>
+          <marks class='text'>
+            <encoding attr='text' field='[Measure Values]' type='quantitative' />
+          </marks>
+      </view></table>
+    </worksheet>
+
+    <worksheet name='Calls by Market and Type'>
+      <table><view>
+          <datasources>
+            <datasource caption='Google Fiber Data' name='textscan.DS1' />
+          </datasources>
+          <datasource-dependencies datasource='textscan.DS1'>
+            <column datatype='string' name='[new_market]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Calculation_TypeLabel]' role='dimension' type='nominal' />
+            <column datatype='date' name='[date_created]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[contacts_n]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <rows>[new_market][Calculation_TypeLabel][date_created]</rows>
+          <cols />
+          <marks class='text'>
+            <encoding attr='text' field='[SUM([contacts_n])]' type='quantitative' />
+          </marks>
+      </view></table>
+    </worksheet>
+  </worksheets>
+
+  <dashboards>
+    <dashboard name='Google Fiber FCR Dashboard'>
+      <size maxheight='2000' maxwidth='2000' minheight='600' minwidth='800' />
+      <zones>
+        <zone id='1' type='layout-flow'>
+          <zone id='2' type='layout-flow' layoutflow='row' h='50'>
+            <zone id='3' type='title' w='1000' h='50' />
+          </zone>
+          <zone id='10' type='layout-flow' layoutflow='row' h='140'>
+            <zone id='11' name='Total Contacts'  type='sheet' w='250' h='140' />
+            <zone id='12' name='Repeat Callers'  type='sheet' w='250' h='140' />
+            <zone id='13' name='Avg Repeat Calls' type='sheet' w='250' h='140' />
+            <zone id='14' name='Top Problem Type' type='sheet' w='250' h='140' />
+          </zone>
+          <zone id='20' type='layout-flow' layoutflow='row' h='280'>
+            <zone id='21' name='Repeats Over Time' type='sheet' w='1000' h='280' />
+          </zone>
+          <zone id='30' type='layout-flow' layoutflow='row' h='360'>
+            <zone id='31' name='Market and Problem Type' type='sheet' w='480' h='360' />
+            <zone id='32' name='Repeat Calls by Date'    type='sheet' w='520' h='360' />
+          </zone>
+          <zone id='40' type='layout-flow' layoutflow='row' h='360'>
+            <zone id='41' name='Calls by Market and Type' type='sheet' w='1000' h='360' />
+          </zone>
+        </zone>
+      </zones>
+    </dashboard>
+  </dashboards>
+
+</workbook>
