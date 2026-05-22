@@ -116,7 +116,7 @@ Every choice maps to a published, reviewable standard.
 
 **Decision:** `docs/`, `sql/`, `dbt/`, `dashboards/` instead of `1 Capture/`, `2 Analyze/`, `3 Monitor/`.
 
-**Reference:** [POSIX portable filename character set](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_278) plus [Cookiecutter Data Science conventions](https://drivendata.github.io/cookiecutter-data-science/). Spaces and capitalization in folder names create friction with the shell, with import paths, and with cross-platform tooling. Phase metadata is preserved in [`06_phase_mapping.md`](06_phase_mapping.md), not encoded in folder names.
+**Reference:** [POSIX portable filename character set](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_278) plus [Cookiecutter Data Science conventions](https://drivendata.github.io/cookiecutter-data-science/). Spaces and capitalization in folder names create friction with the shell, with import paths, and with cross-platform tooling. Phase metadata is preserved in [`phase_mapping.md`](phase_mapping.md), not encoded in folder names.
 
 ### 3.6 `sql/` (legacy) kept alongside `dbt/` (production)
 

@@ -63,7 +63,7 @@ Source: Google Business Intelligence Certificate — Case Study 2 (Google Fiber)
                        (dbt run + dbt test on push)
 ```
 
-See [`docs/05_architecture.md`](docs/05_architecture.md) for the full diagram and rationale.
+See [`docs/architecture.md`](docs/architecture.md) for the full diagram and rationale.
 
 ---
 
@@ -89,7 +89,7 @@ google-fiber-fcr-capstone/
 └── README.md               You are here
 ```
 
-Why this layout? See [`docs/05_architecture.md`](docs/05_architecture.md#repository-layout) — every choice maps to an established standard (dbt Labs structure guide, Twelve-Factor App, Cookiecutter Data Science).
+Why this layout? See [`docs/architecture.md`](docs/architecture.md) — every choice maps to an established standard (dbt Labs structure guide, Twelve-Factor App, Cookiecutter Data Science).
 
 ---
 
@@ -145,7 +145,7 @@ The `mart_fiber_fcr` table exposes these columns for any BI tool:
 | **`fcr_7day_rate`**         | FLOAT  | **% of customers not calling back within 7 days** (secondary KPI)             |
 | `repeat_rate_day1` … `_7`   | FLOAT  | Repeat rate at each day-lag (for decay curves)                                |
 
-Full schema: [`docs/04_data_dictionary.md`](docs/04_data_dictionary.md).
+Full schema: [`docs/data_dictionary.md`](docs/data_dictionary.md).
 
 ---
 
@@ -185,11 +185,11 @@ This project follows the **Capture → Analyze → Monitor** lifecycle from the 
 
 | GBI Phase    | What was done                                                   | Where it lives                         |
 |--------------|-----------------------------------------------------------------|----------------------------------------|
-| **Capture**  | Stakeholder + project requirements, ROCCC data assessment       | `docs/`                                |
+| **Capture**  | Stakeholder + project requirements, strategy doc, ROCCC assessment | `docs/`                              |
 | **Analyze**  | Raw SQL exploration → dbt models → DQ tests                     | `sql/` (legacy) + `dbt/` (production)  |
 | **Monitor**  | Three dashboards + lo-fi mockups                                | `dashboards/`                          |
 
-Full rationale: [`docs/06_phase_mapping.md`](docs/06_phase_mapping.md).
+Full rationale: [`docs/phase_mapping.md`](docs/phase_mapping.md).
 
 ---
 
@@ -206,14 +206,18 @@ Full rationale: [`docs/06_phase_mapping.md`](docs/06_phase_mapping.md).
 
 ---
 
-## 📚 Documentation Index
+### Capture-phase deliverables (numbered, chronological)
 
 - [`docs/01_stakeholder_requirements.md`](docs/01_stakeholder_requirements.md) — what the business asked for
 - [`docs/02_project_requirements.md`](docs/02_project_requirements.md) — scoped & prioritized requirements
-- [`docs/03_roccc_data_assessment.md`](docs/03_roccc_data_assessment.md) — data credibility evaluation
-- [`docs/04_data_dictionary.md`](docs/04_data_dictionary.md) — every column explained
-- [`docs/05_architecture.md`](docs/05_architecture.md) — pipeline & structure rationale
-- [`docs/06_phase_mapping.md`](docs/06_phase_mapping.md) — GBI phase ↔ folder mapping
+- [`docs/03_strategy_document.md`](docs/03_strategy_document.md) — dashboard spec: the four charts to build
+- [`docs/04_roccc_data_assessment.md`](docs/04_roccc_data_assessment.md) — data credibility evaluation
+
+### Reference documentation
+
+- [`docs/data_dictionary.md`](docs/data_dictionary.md) — every column explained
+- [`docs/architecture.md`](docs/architecture.md) — pipeline & structure rationale
+- [`docs/phase_mapping.md`](docs/phase_mapping.md) — GBI phase ↔ folder mapping
 - [`dbt/README.md`](dbt/README.md) — dbt project usage guide
 
 ---

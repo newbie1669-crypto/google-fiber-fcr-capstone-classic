@@ -20,7 +20,8 @@ The goal of Capture is to understand the business problem and the data we have a
 
 - `01_stakeholder_requirements.md` — verbatim from the hiring manager
 - `02_project_requirements.md` — refined, prioritized (R / D / N), with SMART success criteria
-- `03_roccc_data_assessment.md` — 5-pillar credibility assessment of the source data
+- `03_strategy_document.md` — dashboard specification: the four charts to build
+- `04_roccc_data_assessment.md` — 5-pillar credibility assessment of the source data
 
 These produce the artifacts that justify every later technical decision.
 

@@ -33,7 +33,7 @@ All three connect to **the same `mart_fiber_fcr` table** in BigQuery — meaning
 | Repeat by type      | Bar / treemap      | `new_type`             |
 | Trend over time     | Time series        | `date_created`         |
 
-See [`docs/04_data_dictionary.md`](../docs/04_data_dictionary.md) for the full schema.
+See [`docs/data_dictionary.md`](../docs/data_dictionary.md) for the full schema.
 
 ## Mockups
 
