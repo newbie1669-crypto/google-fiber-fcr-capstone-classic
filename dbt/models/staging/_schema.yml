@@ -1,11 +1,12 @@
-# models/staging/schema.yml
-# DQ Tests สำหรับ staging layer — รันด้วย dbt test
+# models/staging/_schema.yml
+# Data-quality tests for the staging layer — run with: dbt test
+# Note: generic-test arguments are nested under `arguments:` (required by dbt 1.10+).
 
 version: 2
 
 models:
   - name: stg_market_1
-    description: "Cleaned staging data จาก Market 1"
+    description: "Cleaned staging data from Market 1"
     columns:
       - name: date_created
         tests:
@@ -14,7 +15,8 @@ models:
         tests:
           - not_null
           - dbt_utils.expression_is_true:
-              expression: ">= 0"
+              arguments:
+                expression: ">= 0"
       - name: new_type
         tests:
           - not_null
@@ -23,7 +25,7 @@ models:
           - not_null
 
   - name: stg_market_2
-    description: "Cleaned staging data จาก Market 2"
+    description: "Cleaned staging data from Market 2"
     columns:
       - name: date_created
         tests:
@@ -32,7 +34,8 @@ models:
         tests:
           - not_null
           - dbt_utils.expression_is_true:
-              expression: ">= 0"
+              arguments:
+                expression: ">= 0"
       - name: new_type
         tests:
           - not_null
@@ -41,7 +44,7 @@ models:
           - not_null
 
   - name: stg_market_3
-    description: "Cleaned staging data จาก Market 3"
+    description: "Cleaned staging data from Market 3"
     columns:
       - name: date_created
         tests:
@@ -50,7 +53,8 @@ models:
         tests:
           - not_null
           - dbt_utils.expression_is_true:
-              expression: ">= 0"
+              arguments:
+                expression: ">= 0"
       - name: new_type
         tests:
           - not_null

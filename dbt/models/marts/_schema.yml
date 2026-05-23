@@ -1,16 +1,17 @@
-# models/marts/schema.yml
-# DQ Tests สำหรับ mart layer — ครอบคลุม CHECK 1-7 จากโจทย์เดิม
+# models/marts/_schema.yml
+# Data-quality tests for the mart layer — covers CHECK 1-7 from the original analysis.
+# Note: generic-test arguments are nested under `arguments:` (required by dbt 1.10+).
 
 version: 2
 
 models:
   - name: mart_fiber_fcr
-    description: "Final FCR mart รวมทุก market พร้อม metrics สำหรับ Tableau"
+    description: "Final FCR mart combining all markets, with metrics for BI tools"
 
     columns:
       # ── CHECK 2: NULL checks ──────────────────────────────────────────
       - name: date_created
-        description: "วันที่สร้าง record"
+        description: "Record date (first-contact date)"
         tests:
           - not_null
 
@@ -25,8 +26,9 @@ models:
           # ── CHECK 6a: accepted values ─────────────────────────────────
           # Must match the actual data: raw type_1..type_5 -> UPPER -> TYPE_1..TYPE_5
           - accepted_values:
-              values: ['TYPE_1', 'TYPE_2', 'TYPE_3', 'TYPE_4', 'TYPE_5']
-              quote: true
+              arguments:
+                values: ['TYPE_1', 'TYPE_2', 'TYPE_3', 'TYPE_4', 'TYPE_5']
+                quote: true
 
       - name: new_market
         description: "Market identifier"
@@ -34,8 +36,9 @@ models:
           - not_null
           # ── CHECK 6b: accepted values ─────────────────────────────────
           - accepted_values:
-              values: ['MARKET_1', 'MARKET_2', 'MARKET_3']
-              quote: true
+              arguments:
+                values: ['MARKET_1', 'MARKET_2', 'MARKET_3']
+                quote: true
 
       - name: contacts_n
         description: "First contacts"
@@ -43,65 +46,76 @@ models:
           - not_null
           # ── CHECK 5: no negative values ───────────────────────────────
           - dbt_utils.expression_is_true:
-              expression: ">= 0"
+              arguments:
+                expression: ">= 0"
 
       - name: contacts_n_1
         tests:
           - not_null
           - dbt_utils.expression_is_true:
-              expression: ">= 0"
+              arguments:
+                expression: ">= 0"
 
       - name: contacts_n_2
         tests:
           - not_null
           - dbt_utils.expression_is_true:
-              expression: ">= 0"
+              arguments:
+                expression: ">= 0"
 
       - name: contacts_n_3
         tests:
           - not_null
           - dbt_utils.expression_is_true:
-              expression: ">= 0"
+              arguments:
+                expression: ">= 0"
 
       - name: contacts_n_4
         tests:
           - not_null
           - dbt_utils.expression_is_true:
-              expression: ">= 0"
+              arguments:
+                expression: ">= 0"
 
       - name: contacts_n_5
         tests:
           - not_null
           - dbt_utils.expression_is_true:
-              expression: ">= 0"
+              arguments:
+                expression: ">= 0"
 
       - name: contacts_n_6
         tests:
           - not_null
           - dbt_utils.expression_is_true:
-              expression: ">= 0"
+              arguments:
+                expression: ">= 0"
 
       - name: contacts_n_7
         tests:
           - not_null
           - dbt_utils.expression_is_true:
-              expression: ">= 0"
+              arguments:
+                expression: ">= 0"
 
-      # ── CHECK เพิ่มเติม: FCR rate ต้องอยู่ใน 0-1 ──────────────────
+      # ── Extra CHECK: FCR rate must sit within 0-1 ─────────────────────
       - name: fcr_day1_rate
         tests:
           - dbt_utils.expression_is_true:
-              expression: "IS NULL OR (fcr_day1_rate >= 0 AND fcr_day1_rate <= 1)"
+              arguments:
+                expression: "IS NULL OR (fcr_day1_rate >= 0 AND fcr_day1_rate <= 1)"
 
       - name: fcr_7day_rate
         tests:
           - dbt_utils.expression_is_true:
-              expression: "IS NULL OR (fcr_7day_rate >= 0 AND fcr_7day_rate <= 1)"
+              arguments:
+                expression: "IS NULL OR (fcr_7day_rate >= 0 AND fcr_7day_rate <= 1)"
 
     # ── CHECK 3: Unique / No Duplicate ─────────────────────────────────
     tests:
       - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - date_created
-            - new_type
-            - new_market
+          arguments:
+            combination_of_columns:
+              - date_created
+              - new_type
+              - new_market
