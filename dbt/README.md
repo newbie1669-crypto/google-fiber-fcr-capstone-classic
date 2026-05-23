@@ -53,7 +53,7 @@ cp dbt/profiles.yml.example ~/.dbt/profiles.yml
 Replace the placeholders:
 
 ```yaml
-project: your-gcp-project-id   # ← your real GCP Project ID (e.g. gbi-test)
+project: your-gcp-project-id   # ← your real GCP Project ID (e.g. gbi-20321)
 ```
 
 For the `prod` target, also point `keyfile` to your service-account JSON.

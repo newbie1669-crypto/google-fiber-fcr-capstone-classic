@@ -3,7 +3,7 @@
 > End-to-end analytics pipeline measuring repeat-caller behavior across three Google Fiber markets.
 > **Stack:** BigQuery → dbt → Tableau / Power BI / Looker Studio
 
-[![dbt CI](https://github.com/<your-username>/google-fiber-fcr-capstone/actions/workflows/dbt_ci.yml/badge.svg)](../../actions/workflows/dbt_ci.yml)
+[![dbt CI](https://github.com/newbie1669-crypto/google-fiber-fcr-capstone/actions/workflows/dbt_ci.yml/badge.svg)](../../actions/workflows/dbt_ci.yml)
 [![dbt](https://img.shields.io/badge/dbt-1.8-orange?logo=dbt)](https://www.getdbt.com/)
 [![BigQuery](https://img.shields.io/badge/BigQuery-warehouse-blue?logo=google-cloud)](https://cloud.google.com/bigquery)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
@@ -224,7 +224,7 @@ Full rationale: [`docs/phase_mapping.md`](docs/phase_mapping.md).
 
 ## 👤 Author
 
-**Pluemprach (Neti) Dangdee** — Google Business Intelligence Capstone, 2025–2026
+**Pluemprach Dangdee** — Google Business Intelligence Capstone, 2025–2026
 
 ## 📄 License
 
