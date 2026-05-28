@@ -1,10 +1,10 @@
-# Looker Studio Dashboard — Google Fiber FCR
+# Data Studio Dashboard — Google Fiber FCR
 
-🚧 **Status: in progress** — link will be added once published.
+**Status: Done**
 
 ## Connect
 
-1. Go to <https://lookerstudio.google.com/>
+1. Go to <https://datastudio.google.com/>
 2. **Create → Data source → BigQuery connector**
 3. Authenticate with the GCP project where the dbt mart lives
 4. Project: `your-gcp-project-id` → Dataset: `dbt_prod` → Table: `mart_fiber_fcr`
@@ -15,19 +15,7 @@
 
 Once published with **Share → Anyone with the link can view**, paste the link below:
 
-```
-Public URL: <not yet published>
-```
-
-## Visualizations (suggested)
-
-Match the metrics list in [`../README.md`](../README.md#common-metrics-across-all-three):
-
-- **Scorecard** — `fcr_day1_rate` (primary KPI), `fcr_7day_rate`
-- **Time series** — `repeat_rate_day1..7` over `date_created`
-- **Bar chart** — repeats by `new_market`
-- **Bar chart** — repeats by `new_type`
-- **Filter controls** — date range, market, type
+Public URL: [`Google Fiber Capstone Dashboard`](https://datastudio.google.com/reporting/fd6d408a-0a4b-45eb-bf1a-7ca99d69dd03)
 
 ## Auto-refresh
 

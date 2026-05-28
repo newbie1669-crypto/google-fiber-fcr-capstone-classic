@@ -1,359 +1,591 @@
 <?xml version='1.0' encoding='utf-8' ?>
-<workbook source-build='2021.4.0' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+
+<!-- build 20261.26.0410.0924                               -->
+<workbook original-version='18.1' source-build='2026.1.1 (20261.26.0410.0924)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
   <datasources>
-    <datasource hasconnection='false' inline='true' name='Parameters' />
-    <datasource caption='Google Fiber Data' inline='true' name='textscan.DS1' version='18.1'>
-      <connection class='textscan'
-                  directory='C:\Users\newbi\Documents\Local_Documents\google-fiber-fcr-capstone\2 Analyze'
-                  filename='google_fiber_case_dashboard_data.csv'
-                  header='yes'
-                  locale='en_US'
-                  separator=','>
+    <datasource caption='dbt_prod' inline='true' name='federated.08gsw400l3436o180cab602v2kjj' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='BigQuery' name='bigquery.0sqa10u1l0f5vu13neh941dpeh6b'>
+            <connection CATALOG='gbi-test' EXECCATALOG='gbi-test' authentication='oauth' class='bigquery' connection-dialect='google-sql' project='CAPSTONE-PROJECT' schema='dbt_prod' server-oauth='' username='newbie1669@gmail.com' />
+          </named-connection>
+        </named-connections>
+        <relation connection='bigquery.0sqa10u1l0f5vu13neh941dpeh6b' name='mart_fiber_fcr' table='[gbi-test.dbt_prod].[mart_fiber_fcr]' type='table' />
         <metadata-records>
           <metadata-record class='column'>
             <remote-name>date_created</remote-name>
             <remote-type>7</remote-type>
             <local-name>[date_created]</local-name>
-            <parent-name>[Extract]</parent-name>
+            <parent-name>[mart_fiber_fcr]</parent-name>
             <remote-alias>date_created</remote-alias>
-            <ordinal>0</ordinal>
             <local-type>date</local-type>
             <aggregation>Year</aggregation>
             <contains-null>true</contains-null>
+            <object-id>[mart_fiber_fcr_84244B37A69D45898DE73A8E524533E9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>new_type</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[new_type]</local-name>
+            <parent-name>[mart_fiber_fcr]</parent-name>
+            <remote-alias>new_type</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[mart_fiber_fcr_84244B37A69D45898DE73A8E524533E9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>new_market</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[new_market]</local-name>
+            <parent-name>[mart_fiber_fcr]</parent-name>
+            <remote-alias>new_market</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[mart_fiber_fcr_84244B37A69D45898DE73A8E524533E9]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>contacts_n</remote-name>
             <remote-type>20</remote-type>
             <local-name>[contacts_n]</local-name>
-            <parent-name>[Extract]</parent-name>
+            <parent-name>[mart_fiber_fcr]</parent-name>
             <remote-alias>contacts_n</remote-alias>
-            <ordinal>1</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
+            <object-id>[mart_fiber_fcr_84244B37A69D45898DE73A8E524533E9]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>contacts_n_1</remote-name>
             <remote-type>20</remote-type>
             <local-name>[contacts_n_1]</local-name>
-            <parent-name>[Extract]</parent-name>
+            <parent-name>[mart_fiber_fcr]</parent-name>
             <remote-alias>contacts_n_1</remote-alias>
-            <ordinal>2</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
+            <object-id>[mart_fiber_fcr_84244B37A69D45898DE73A8E524533E9]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>contacts_n_2</remote-name>
             <remote-type>20</remote-type>
             <local-name>[contacts_n_2]</local-name>
-            <parent-name>[Extract]</parent-name>
+            <parent-name>[mart_fiber_fcr]</parent-name>
             <remote-alias>contacts_n_2</remote-alias>
-            <ordinal>3</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
+            <object-id>[mart_fiber_fcr_84244B37A69D45898DE73A8E524533E9]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>contacts_n_3</remote-name>
             <remote-type>20</remote-type>
             <local-name>[contacts_n_3]</local-name>
-            <parent-name>[Extract]</parent-name>
+            <parent-name>[mart_fiber_fcr]</parent-name>
             <remote-alias>contacts_n_3</remote-alias>
-            <ordinal>4</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
+            <object-id>[mart_fiber_fcr_84244B37A69D45898DE73A8E524533E9]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>contacts_n_4</remote-name>
             <remote-type>20</remote-type>
             <local-name>[contacts_n_4]</local-name>
-            <parent-name>[Extract]</parent-name>
+            <parent-name>[mart_fiber_fcr]</parent-name>
             <remote-alias>contacts_n_4</remote-alias>
-            <ordinal>5</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
+            <object-id>[mart_fiber_fcr_84244B37A69D45898DE73A8E524533E9]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>contacts_n_5</remote-name>
             <remote-type>20</remote-type>
             <local-name>[contacts_n_5]</local-name>
-            <parent-name>[Extract]</parent-name>
+            <parent-name>[mart_fiber_fcr]</parent-name>
             <remote-alias>contacts_n_5</remote-alias>
-            <ordinal>6</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
+            <object-id>[mart_fiber_fcr_84244B37A69D45898DE73A8E524533E9]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>contacts_n_6</remote-name>
             <remote-type>20</remote-type>
             <local-name>[contacts_n_6]</local-name>
-            <parent-name>[Extract]</parent-name>
+            <parent-name>[mart_fiber_fcr]</parent-name>
             <remote-alias>contacts_n_6</remote-alias>
-            <ordinal>7</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
+            <object-id>[mart_fiber_fcr_84244B37A69D45898DE73A8E524533E9]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>contacts_n_7</remote-name>
             <remote-type>20</remote-type>
             <local-name>[contacts_n_7]</local-name>
-            <parent-name>[Extract]</parent-name>
+            <parent-name>[mart_fiber_fcr]</parent-name>
             <remote-alias>contacts_n_7</remote-alias>
-            <ordinal>8</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
+            <object-id>[mart_fiber_fcr_84244B37A69D45898DE73A8E524533E9]</object-id>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>new_type</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[new_type]</local-name>
-            <parent-name>[Extract]</parent-name>
-            <remote-alias>new_type</remote-alias>
-            <ordinal>9</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
+            <remote-name>total_repeat_contacts</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_repeat_contacts]</local-name>
+            <parent-name>[mart_fiber_fcr]</parent-name>
+            <remote-alias>total_repeat_contacts</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
+            <object-id>[mart_fiber_fcr_84244B37A69D45898DE73A8E524533E9]</object-id>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>new_market</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[new_market]</local-name>
-            <parent-name>[Extract]</parent-name>
-            <remote-alias>new_market</remote-alias>
-            <ordinal>10</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
+            <remote-name>fcr_day1_rate</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[fcr_day1_rate]</local-name>
+            <parent-name>[mart_fiber_fcr]</parent-name>
+            <remote-alias>fcr_day1_rate</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
+            <object-id>[mart_fiber_fcr_84244B37A69D45898DE73A8E524533E9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fcr_7day_rate</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[fcr_7day_rate]</local-name>
+            <parent-name>[mart_fiber_fcr]</parent-name>
+            <remote-alias>fcr_7day_rate</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[mart_fiber_fcr_84244B37A69D45898DE73A8E524533E9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>repeat_rate_day1</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[repeat_rate_day1]</local-name>
+            <parent-name>[mart_fiber_fcr]</parent-name>
+            <remote-alias>repeat_rate_day1</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[mart_fiber_fcr_84244B37A69D45898DE73A8E524533E9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>repeat_rate_day2</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[repeat_rate_day2]</local-name>
+            <parent-name>[mart_fiber_fcr]</parent-name>
+            <remote-alias>repeat_rate_day2</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[mart_fiber_fcr_84244B37A69D45898DE73A8E524533E9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>repeat_rate_day3</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[repeat_rate_day3]</local-name>
+            <parent-name>[mart_fiber_fcr]</parent-name>
+            <remote-alias>repeat_rate_day3</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[mart_fiber_fcr_84244B37A69D45898DE73A8E524533E9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>repeat_rate_day4</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[repeat_rate_day4]</local-name>
+            <parent-name>[mart_fiber_fcr]</parent-name>
+            <remote-alias>repeat_rate_day4</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[mart_fiber_fcr_84244B37A69D45898DE73A8E524533E9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>repeat_rate_day5</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[repeat_rate_day5]</local-name>
+            <parent-name>[mart_fiber_fcr]</parent-name>
+            <remote-alias>repeat_rate_day5</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[mart_fiber_fcr_84244B37A69D45898DE73A8E524533E9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>repeat_rate_day6</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[repeat_rate_day6]</local-name>
+            <parent-name>[mart_fiber_fcr]</parent-name>
+            <remote-alias>repeat_rate_day6</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[mart_fiber_fcr_84244B37A69D45898DE73A8E524533E9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>repeat_rate_day7</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[repeat_rate_day7]</local-name>
+            <parent-name>[mart_fiber_fcr]</parent-name>
+            <remote-alias>repeat_rate_day7</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[mart_fiber_fcr_84244B37A69D45898DE73A8E524533E9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>dbt_updated_at</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[dbt_updated_at]</local-name>
+            <parent-name>[mart_fiber_fcr]</parent-name>
+            <remote-alias>dbt_updated_at</remote-alias>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[mart_fiber_fcr_84244B37A69D45898DE73A8E524533E9]</object-id>
           </metadata-record>
         </metadata-records>
       </connection>
-
       <aliases enabled='yes' />
-
-      <!-- Raw dimensions -->
-      <column datatype='date'    name='[date_created]' role='dimension' type='ordinal' />
-      <column datatype='string'  name='[new_type]'     role='dimension' type='nominal' />
-      <column datatype='string'  name='[new_market]'   role='dimension' type='nominal' />
-
-      <!-- Raw measures -->
-      <column datatype='integer' name='[contacts_n]' role='measure' type='quantitative' />
-      <column datatype='integer' name='[contacts_n_1]' role='measure' type='quantitative' />
-      <column datatype='integer' name='[contacts_n_2]' role='measure' type='quantitative' />
-      <column datatype='integer' name='[contacts_n_3]' role='measure' type='quantitative' />
-      <column datatype='integer' name='[contacts_n_4]' role='measure' type='quantitative' />
-      <column datatype='integer' name='[contacts_n_5]' role='measure' type='quantitative' />
-      <column datatype='integer' name='[contacts_n_6]' role='measure' type='quantitative' />
-      <column datatype='integer' name='[contacts_n_7]' role='measure' type='quantitative' />
-
-      <!-- Calculated fields -->
-      <column caption='Type Label' datatype='string' name='[Calculation_TypeLabel]' role='dimension' type='nominal'>
-        <calculation class='tableau' formula='CASE [new_type]&#10;WHEN &quot;type_1&quot; THEN &quot;Internet&quot;&#10;WHEN &quot;type_2&quot; THEN &quot;Account&quot;&#10;WHEN &quot;type_3&quot; THEN &quot;Technician&quot;&#10;WHEN &quot;type_4&quot; THEN &quot;Billing&quot;&#10;WHEN &quot;type_5&quot; THEN &quot;Other&quot;&#10;ELSE [new_type]&#10;END' />
-      </column>
-
-      <column caption='Total Repeat Calls' datatype='integer' name='[Calculation_TotalRepeat]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='[contacts_n_1]+[contacts_n_2]+[contacts_n_3]+[contacts_n_4]+[contacts_n_5]+[contacts_n_6]+[contacts_n_7]' />
-      </column>
-
-      <column caption='Is Repeat Caller' datatype='boolean' name='[Calculation_IsRepeat]' role='dimension' type='nominal'>
-        <calculation class='tableau' formula='[contacts_n_1]+[contacts_n_2]+[contacts_n_3]+[contacts_n_4]+[contacts_n_5]+[contacts_n_6]+[contacts_n_7] &gt; 0' />
-      </column>
-
-      <column caption='Repeat Callers Count' datatype='integer' name='[Calculation_RepeatCount]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='IF [contacts_n_1]+[contacts_n_2]+[contacts_n_3]+[contacts_n_4]+[contacts_n_5]+[contacts_n_6]+[contacts_n_7] &gt; 0 THEN 1 ELSE 0 END' />
-      </column>
-
-      <column caption='Avg Repeat Calls (if repeat)' datatype='real' name='[Calculation_AvgRepeat]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='IF [contacts_n_1]+[contacts_n_2]+[contacts_n_3]+[contacts_n_4]+[contacts_n_5]+[contacts_n_6]+[contacts_n_7] &gt; 0 THEN [contacts_n_1]+[contacts_n_2]+[contacts_n_3]+[contacts_n_4]+[contacts_n_5]+[contacts_n_6]+[contacts_n_7] ELSE NULL END' />
-      </column>
+      <column caption='mart_fiber_fcr' datatype='table' name='[__tableau_internal_object_id__].[mart_fiber_fcr_84244B37A69D45898DE73A8E524533E9]' role='measure' type='quantitative' />
+      <column caption='Contacts N' datatype='integer' name='[contacts_n]' role='measure' type='quantitative' />
+      <column caption='Contacts N 1' datatype='integer' name='[contacts_n_1]' role='measure' type='quantitative' />
+      <column caption='Contacts N 2' datatype='integer' name='[contacts_n_2]' role='measure' type='quantitative' />
+      <column caption='Contacts N 3' datatype='integer' name='[contacts_n_3]' role='measure' type='quantitative' />
+      <column caption='Contacts N 4' datatype='integer' name='[contacts_n_4]' role='measure' type='quantitative' />
+      <column caption='Contacts N 5' datatype='integer' name='[contacts_n_5]' role='measure' type='quantitative' />
+      <column caption='Contacts N 6' datatype='integer' name='[contacts_n_6]' role='measure' type='quantitative' />
+      <column caption='Contacts N 7' datatype='integer' name='[contacts_n_7]' role='measure' type='quantitative' />
+      <column caption='Date Created' datatype='date' name='[date_created]' role='dimension' type='ordinal' />
+      <column caption='Dbt Updated At' datatype='datetime' name='[dbt_updated_at]' role='dimension' type='ordinal' />
+      <column caption='Fcr 7Day Rate' datatype='real' name='[fcr_7day_rate]' role='measure' type='quantitative' />
+      <column caption='Fcr Day1 Rate' datatype='real' name='[fcr_day1_rate]' role='measure' type='quantitative' />
+      <column caption='New Market' datatype='string' name='[new_market]' role='dimension' type='nominal' />
+      <column caption='New Type' datatype='string' name='[new_type]' role='dimension' type='nominal' />
+      <column caption='Repeat Rate Day1' datatype='real' name='[repeat_rate_day1]' role='dimension' type='quantitative' />
+      <column caption='Repeat Rate Day2' datatype='real' name='[repeat_rate_day2]' role='dimension' type='quantitative' />
+      <column caption='Repeat Rate Day3' datatype='real' name='[repeat_rate_day3]' role='dimension' type='quantitative' />
+      <column caption='Repeat Rate Day4' datatype='real' name='[repeat_rate_day4]' role='dimension' type='quantitative' />
+      <column caption='Repeat Rate Day5' datatype='real' name='[repeat_rate_day5]' role='dimension' type='quantitative' />
+      <column caption='Repeat Rate Day6' datatype='real' name='[repeat_rate_day6]' role='dimension' type='quantitative' />
+      <column caption='Repeat Rate Day7' datatype='real' name='[repeat_rate_day7]' role='dimension' type='quantitative' />
+      <column caption='Total Repeat Contacts' datatype='integer' name='[total_repeat_contacts]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Thailand&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='mart_fiber_fcr' id='mart_fiber_fcr_84244B37A69D45898DE73A8E524533E9'>
+            <properties context=''>
+              <relation connection='bigquery.0sqa10u1l0f5vu13neh941dpeh6b' name='mart_fiber_fcr' table='[gbi-test.dbt_prod].[mart_fiber_fcr]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
     </datasource>
   </datasources>
-
   <worksheets>
-    <worksheet name='Total Contacts'>
-      <table><view>
-          <datasources>
-            <datasource caption='Google Fiber Data' name='textscan.DS1' />
-          </datasources>
-          <datasource-dependencies datasource='textscan.DS1'>
-            <column datatype='integer' name='[contacts_n]' role='measure' type='quantitative' />
-          </datasource-dependencies>
-          <rows />
-          <cols />
-          <marks class='text'>
-            <encoding attr='text' field='[SUM([contacts_n])]' type='quantitative' />
-          </marks>
-          <style>
-            <style-rule element='mark'><encoding attr='font-size' value='24' /></style-rule>
-          </style>
-      </view></table>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{4652554D-03D1-4A79-87F9-BB5344AA43FD}' />
     </worksheet>
-
-    <worksheet name='Repeat Callers'>
-      <table><view>
-          <datasources>
-            <datasource caption='Google Fiber Data' name='textscan.DS1' />
-          </datasources>
-          <datasource-dependencies datasource='textscan.DS1'>
-            <column datatype='integer' name='[Calculation_RepeatCount]' role='measure' type='quantitative' />
-          </datasource-dependencies>
-          <rows />
-          <cols />
-          <marks class='text'>
-            <encoding attr='text' field='[SUM([Calculation_RepeatCount])]' type='quantitative' />
-          </marks>
-      </view></table>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{5BF5CB83-AC7D-45FB-83D5-B8A48FC613D6}' />
     </worksheet>
-
-    <worksheet name='Avg Repeat Calls'>
-      <table><view>
-          <datasources>
-            <datasource caption='Google Fiber Data' name='textscan.DS1' />
-          </datasources>
-          <datasource-dependencies datasource='textscan.DS1'>
-            <column datatype='real' name='[Calculation_AvgRepeat]' role='measure' type='quantitative' />
-          </datasource-dependencies>
-          <rows />
-          <cols />
-          <marks class='text'>
-            <encoding attr='text' field='[AVG([Calculation_AvgRepeat])]' type='quantitative' />
-          </marks>
-      </view></table>
+    <worksheet name='Sheet 3'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{BB91D11E-0682-4DAF-8552-67E492541205}' />
     </worksheet>
-
-    <worksheet name='Top Problem Type'>
-      <table><view>
-          <datasources>
-            <datasource caption='Google Fiber Data' name='textscan.DS1' />
-          </datasources>
-          <datasource-dependencies datasource='textscan.DS1'>
-            <column datatype='string' name='[Calculation_TypeLabel]' role='dimension' type='nominal' />
-            <column datatype='integer' name='[contacts_n]' role='measure' type='quantitative' />
-          </datasource-dependencies>
-          <rows>[Calculation_TypeLabel]</rows>
-          <cols>[SUM([contacts_n])]</cols>
-          <sort column='[SUM([contacts_n])]' direction='DESC' />
-          <marks class='bar' />
-      </view></table>
-    </worksheet>
-
-    <worksheet name='Repeats Over Time'>
-      <table><view>
-          <datasources>
-            <datasource caption='Google Fiber Data' name='textscan.DS1' />
-          </datasources>
-          <datasource-dependencies datasource='textscan.DS1'>
-            <column datatype='date' name='[date_created]' role='dimension' type='ordinal' />
-            <column datatype='integer' name='[contacts_n]' role='measure' type='quantitative' />
-          </datasource-dependencies>
-          <rows>[SUM([contacts_n])]</rows>
-          <cols>[WEEK([date_created])]</cols>
-          <marks class='bar' />
-          <style>
-            <style-rule element='header'><encoding attr='show' value='false' /></style-rule>
-          </style>
-      </view></table>
-    </worksheet>
-
-    <worksheet name='Market and Problem Type'>
-      <table><view>
-          <datasources>
-            <datasource caption='Google Fiber Data' name='textscan.DS1' />
-          </datasources>
-          <datasource-dependencies datasource='textscan.DS1'>
-            <column datatype='string' name='[Calculation_TypeLabel]' role='dimension' type='nominal' />
-            <column datatype='string' name='[new_market]' role='dimension' type='nominal' />
-            <column datatype='integer' name='[contacts_n_1]' role='measure' type='quantitative' />
-          </datasource-dependencies>
-          <rows>[Calculation_TypeLabel]</rows>
-          <cols>[SUM([contacts_n_1])]</cols>
-          <marks class='bar'>
-            <encoding attr='color' field='[new_market]' type='nominal' />
-          </marks>
-          <sort column='[SUM([contacts_n_1])]' direction='DESC' />
-      </view></table>
-    </worksheet>
-
-    <worksheet name='Repeat Calls by Date'>
-      <table><view>
-          <datasources>
-            <datasource caption='Google Fiber Data' name='textscan.DS1' />
-          </datasources>
-          <datasource-dependencies datasource='textscan.DS1'>
-            <column datatype='date' name='[date_created]' role='dimension' type='ordinal' />
-            <column datatype='integer' name='[contacts_n_1]' role='measure' type='quantitative' />
-            <column datatype='integer' name='[contacts_n_2]' role='measure' type='quantitative' />
-            <column datatype='integer' name='[contacts_n_3]' role='measure' type='quantitative' />
-            <column datatype='integer' name='[Calculation_TotalRepeat]' role='measure' type='quantitative' />
-          </datasource-dependencies>
-          <rows>[date_created]</rows>
-          <cols>[Measure Names]</cols>
-          <filter class='categorical' column='[Measure Names]'>
-            <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
-              <groupfilter function='member' level='[Measure Names]' member='SUM(contacts_n_1)' />
-              <groupfilter function='member' level='[Measure Names]' member='SUM(contacts_n_2)' />
-              <groupfilter function='member' level='[Measure Names]' member='SUM(contacts_n_3)' />
-              <groupfilter function='member' level='[Measure Names]' member='SUM(Calculation_TotalRepeat)' />
-            </groupfilter>
-          </filter>
-          <marks class='text'>
-            <encoding attr='text' field='[Measure Values]' type='quantitative' />
-          </marks>
-      </view></table>
-    </worksheet>
-
-    <worksheet name='Calls by Market and Type'>
-      <table><view>
-          <datasources>
-            <datasource caption='Google Fiber Data' name='textscan.DS1' />
-          </datasources>
-          <datasource-dependencies datasource='textscan.DS1'>
-            <column datatype='string' name='[new_market]' role='dimension' type='nominal' />
-            <column datatype='string' name='[Calculation_TypeLabel]' role='dimension' type='nominal' />
-            <column datatype='date' name='[date_created]' role='dimension' type='ordinal' />
-            <column datatype='integer' name='[contacts_n]' role='measure' type='quantitative' />
-          </datasource-dependencies>
-          <rows>[new_market][Calculation_TypeLabel][date_created]</rows>
-          <cols />
-          <marks class='text'>
-            <encoding attr='text' field='[SUM([contacts_n])]' type='quantitative' />
-          </marks>
-      </view></table>
+    <worksheet name='Sheet 4'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{CD6AED31-497F-4185-AA9E-DC29BADED693}' />
     </worksheet>
   </worksheets>
-
   <dashboards>
-    <dashboard name='Google Fiber FCR Dashboard'>
-      <size maxheight='2000' maxwidth='2000' minheight='600' minwidth='800' />
-      <zones>
-        <zone id='1' type='layout-flow'>
-          <zone id='2' type='layout-flow' layoutflow='row' h='50'>
-            <zone id='3' type='title' w='1000' h='50' />
-          </zone>
-          <zone id='10' type='layout-flow' layoutflow='row' h='140'>
-            <zone id='11' name='Total Contacts'  type='sheet' w='250' h='140' />
-            <zone id='12' name='Repeat Callers'  type='sheet' w='250' h='140' />
-            <zone id='13' name='Avg Repeat Calls' type='sheet' w='250' h='140' />
-            <zone id='14' name='Top Problem Type' type='sheet' w='250' h='140' />
-          </zone>
-          <zone id='20' type='layout-flow' layoutflow='row' h='280'>
-            <zone id='21' name='Repeats Over Time' type='sheet' w='1000' h='280' />
-          </zone>
-          <zone id='30' type='layout-flow' layoutflow='row' h='360'>
-            <zone id='31' name='Market and Problem Type' type='sheet' w='480' h='360' />
-            <zone id='32' name='Repeat Calls by Date'    type='sheet' w='520' h='360' />
-          </zone>
-          <zone id='40' type='layout-flow' layoutflow='row' h='360'>
-            <zone id='41' name='Calls by Market and Type' type='sheet' w='1000' h='360' />
-          </zone>
-        </zone>
-      </zones>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones />
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='3' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{237A617C-5325-42AE-AAD6-8D43F9778748}' />
     </dashboard>
   </dashboards>
-
+  <windows saved-dpi-scale-factor='1.5' source-height='44'>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='{2125B3F5-012A-4B71-B1A8-72BE08D34438}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{E63C60ED-9BD8-43AD-B74B-13B407155348}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{B354DBED-2014-450D-A358-BDF4A5A6D6D6}' />
+    </window>
+    <window class='worksheet' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{9754CB1A-E81B-40CC-A3D4-7E5B03C12FD1}' />
+    </window>
+    <window class='worksheet' name='Sheet 4'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{66C74A35-A22E-48E2-9F67-B160116632A6}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Dashboard 1' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABYlAAAWJQFJUiTw
+      AAACFUlEQVR4nO3TMQEAIAzAMMC/5yFjRxMFfXpnZg5Eve0A2GQA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQD
+      kGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBp
+      BiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA
+      0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDN
+      AKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxA
+      mgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKR9Y+0F
+      fBUOM1sAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABYlAAAWJQFJUiTw
+      AAACFUlEQVR4nO3TMQEAIAzAMMC/5yFjRxMFfXpnZg5Eve0A2GQA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQD
+      kGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBp
+      BiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA
+      0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDN
+      AKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxA
+      mgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKR9Y+0F
+      fBUOM1sAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 2' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABYlAAAWJQFJUiTw
+      AAACFUlEQVR4nO3TMQEAIAzAMMC/5yFjRxMFfXpnZg5Eve0A2GQA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQD
+      kGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBp
+      BiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA
+      0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDN
+      AKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxA
+      mgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKR9Y+0F
+      fBUOM1sAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 3' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABYlAAAWJQFJUiTw
+      AAACFUlEQVR4nO3TMQEAIAzAMMC/5yFjRxMFfXpnZg5Eve0A2GQA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQD
+      kGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBp
+      BiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA
+      0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDN
+      AKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxA
+      mgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKR9Y+0F
+      fBUOM1sAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 4' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABYlAAAWJQFJUiTw
+      AAACFUlEQVR4nO3TMQEAIAzAMMC/5yFjRxMFfXpnZg5Eve0A2GQA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQD
+      kGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBp
+      BiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA
+      0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDN
+      AKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxA
+      mgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKR9Y+0F
+      fBUOM1sAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
 </workbook>
