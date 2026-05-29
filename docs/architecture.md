@@ -44,7 +44,7 @@ This document explains **what was built**, **how it flows**, and **why each fold
               ┌──────────────────┼──────────────────┐
               ▼                  ▼                  ▼
        ┌──────────────┐  ┌──────────────┐  ┌──────────────┐
-       │   Tableau    │  │   Power BI   │  │ Looker Studio│
+       │   Tableau    │  │   Power BI   │  │  Data Studio │
        │              │  │              │  │              │
        └──────────────┘  └──────────────┘  └──────────────┘
 
@@ -74,7 +74,7 @@ google-fiber-fcr-capstone/
 ├── dashboards/                [Monitor phase] BI deliverables
 │   ├── tableau/
 │   ├── powerbi/
-│   ├── looker_studio/
+│   ├── data_studio/
 │   └── mockups/
 ├── Makefile                   One-command operations
 ├── .gitignore                 Blocks secrets + build artifacts
@@ -132,7 +132,7 @@ Every choice maps to a published, reviewable standard.
 
 ### 3.8 `dashboards/` split by BI tool
 
-**Decision:** Each BI tool gets its own subfolder (`tableau/`, `powerbi/`, `looker_studio/`).
+**Decision:** Each BI tool gets its own subfolder (`tableau/`, `powerbi/`, `data_studio/`).
 
 **Reference:** Convention used by analytics portfolios on GitHub (e.g. [Tableau Public best practices](https://www.tableau.com/learn/articles/best-practices)). Reviewers can navigate to the BI tool they know without sifting through unrelated artifacts.
 
