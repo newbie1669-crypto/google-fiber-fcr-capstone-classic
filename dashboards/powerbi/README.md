@@ -1,6 +1,6 @@
 # Power BI Dashboard — Google Fiber FCR
 
-🚧 **Status: in progress** — the `.pbix` will be added once built.
+**Status: Done** 
 
 ## Plan
 
