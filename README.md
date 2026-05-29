@@ -1,7 +1,7 @@
 # Google Fiber BI Capstone Project — First Contact Resolution (FCR) Analytics
 
 > End-to-end analytics pipeline measuring repeat-caller behavior across three Google Fiber markets.
-> **Stack:** BigQuery → dbt → Tableau / Power BI / Looker Studio
+> **Stack:** BigQuery → dbt → Tableau / Power BI / Data Studio
 
 [![dbt CI](https://github.com/newbie1669-crypto/google-fiber-fcr-capstone/actions/workflows/dbt_ci.yml/badge.svg)](../../actions/workflows/dbt_ci.yml)
 [![dbt](https://img.shields.io/badge/dbt-1.8-orange?logo=dbt)](https://www.getdbt.com/)
@@ -18,16 +18,16 @@ Google Fiber's customer service team wants to **reduce repeat calls** and improv
 
 Source: Google Business Intelligence Certificate — Case Study 2 (Google Fiber).
 
-## 🎯 Project Delivers
+## Project Delivers
 
 1. A **production-grade transformation layer** (dbt) that turns three raw call-center tables into a single, tested FCR mart
 2. **Data quality tests** (12+ assertions covering nulls, ranges, accepted values, uniqueness) wired into CI
-3. **Three dashboards** (Tableau, Power BI, Looker Studio) backed by the same trusted dataset
+3. **Three dashboards** (Tableau, Power BI, Data Studio) backed by the same trusted dataset
 4. **Stakeholder + ROCCC data quality assessment documentation** for the full BI lifecycle
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
@@ -52,7 +52,7 @@ Source: Google Business Intelligence Certificate — Case Study 2 (Google Fiber)
 │              ┌──────────────────────────┼──────────────────────────┐│
 │              ▼                          ▼                          ▼│
 │      ┌──────────────┐           ┌──────────────┐          ┌─────────┴──┐
-│      │   Tableau    │           │   Power BI   │          │   Looker   │
+│      │   Tableau    │           │   Power BI   │          │    Data    │
 │      │  Dashboard   │           │  Dashboard   │          │   Studio   │
 │      └──────────────┘           └──────────────┘          └────────────┘
 │                                                                     │
@@ -83,7 +83,7 @@ google-fiber-fcr-capstone/
 ├── dashboards/             3 BI versions on the same mart
 │   ├── tableau/
 │   ├── powerbi/
-│   ├── looker_studio/
+│   ├── data_studio/
 │   └── mockups/                lo-fi mockups from design phase
 ├── Makefile                One-command operations (`make help`)
 └── README.md               You are here
@@ -93,7 +93,7 @@ Why this layout? See [`docs/architecture.md`](docs/architecture.md) — every ch
 
 ---
 
-## 🚀 Quickstart
+## 🚀 Quickstart (for dev)
 
 ### Prerequisites
 
@@ -129,7 +129,7 @@ Need granular control? Run `make help` for all targets, or see the [`dbt/README.
 
 ---
 
-## 📊 Key Metrics Built by the Pipeline
+## Key Metrics Built by the Pipeline
 
 The `mart_fiber_fcr` table exposes these columns for any BI tool:
 
@@ -142,13 +142,13 @@ The `mart_fiber_fcr` table exposes these columns for any BI tool:
 | `contacts_n_1` … `_n_7`     | INT    | Repeat contacts 1–7 days later                                                |
 | **`fcr_day1_rate`**         | FLOAT  | **% of customers not calling back the next day** (primary KPI)                |
 | **`fcr_7day_rate`**         | FLOAT  | **% of customers not calling back within 7 days** (secondary KPI)             |
-| `repeat_rate_day1` … `_7`   | FLOAT  | Repeat rate at each day-lag (for decay curves)                                |
+| `repeat_rate_day1` … `_7`   | FLOAT  | Repeat rate at each day-lag (for decay curves)(optional)                      |
 
 Full schema: [`docs/data_dictionary.md`](docs/data_dictionary.md).
 
 ---
 
-## 🛡️ Data Quality
+## Data Quality
 
 Twelve+ tests run on every push via GitHub Actions. They map to the seven CHECKs of the original analysis:
 
@@ -164,7 +164,7 @@ Twelve+ tests run on every push via GitHub Actions. They map to the seven CHECKs
 
 ---
 
-## 📈 Dashboards
+## Dashboards
 
 Three independent dashboards backed by the same `mart_fiber_fcr` table — pick the BI tool of your choice.
 
@@ -172,13 +172,13 @@ Three independent dashboards backed by the same `mart_fiber_fcr` table — pick 
 |---------------------|-----------------------|-------------------------------------------|
 | **Tableau**         | ✅ Built (.twbx)      | [`dashboards/tableau/`](dashboards/tableau/)             |
 | **Power BI**        | ✅ Built (.pbix)      | [`dashboards/powerbi/`](dashboards/powerbi/)             |
-| **Looker Studio**   | ✅ Built (Data Studio)      | [`dashboards/looker_studio/`](dashboards/looker_studio/) |
+| **Looker Studio**   | ✅ Built (Data Studio)      | [`dashboards/looker_studio/`](dashboards/data_studio/) |
 
 Lo-fidelity mockups from the design phase: [`dashboards/mockups/`](dashboards/mockups/).
 
 ---
 
-## 🗺️ Project Phases
+## Project Phases
 
 This project follows the **Capture → Analyze → Monitor** lifecycle from the Google Business Intelligence Certificate. The mapping to engineering folders:
 
@@ -200,8 +200,8 @@ Full rationale: [`docs/phase_mapping.md`](docs/phase_mapping.md).
 | Transform    | dbt-bigquery 1.8                                  | SQL-native, version-controlled, testable  |
 | DQ Tests     | dbt-utils, dbt-expectations                       | Great-Expectations-style assertions in dbt|
 | CI/CD        | GitHub Actions                                    | Auto-test on every PR / push to main      |
-| BI           | Tableau / Power BI / Looker Studio                | Same mart, three dashboards                |
-| Docs         | Markdown + .docx originals                        | GitHub-rendered + Word for delivery to stakeholder   |
+| BI           | Tableau / Power BI / Data Studio                  | Same mart, three dashboards               |
+| Docs         | Markdown + .docx originals                        | GitHub-rendered + Word for delivery to stakeholder |
 
 ---
 
@@ -210,7 +210,7 @@ Full rationale: [`docs/phase_mapping.md`](docs/phase_mapping.md).
 - [`docs/01_stakeholder_requirements.md`](docs/01_stakeholder_requirements.md) — what the business asked for
 - [`docs/02_project_requirements.md`](docs/02_project_requirements.md) — scoped & prioritized requirements
 - [`docs/03_strategy_document.md`](docs/03_strategy_document.md) — dashboard spec: the four charts to build
-- [`docs/04_roccc_data_assessment.md`](docs/04_roccc_data_assessment.md) — data credibility evaluation
+- [`docs/04_roccc_data_assessment.md`](docs/04_roccc_data_assessment.md) — data quality evaluation
 
 ### Reference documentation
 
@@ -221,10 +221,10 @@ Full rationale: [`docs/phase_mapping.md`](docs/phase_mapping.md).
 
 ---
 
-## 👤 Author
+## Author
 
 **Pluemprach Dangdee** — Google Business Intelligence Capstone, 2025–2026
 
-## 📄 License
+## License
 
 MIT — see [LICENSE](LICENSE)
