@@ -1,4 +1,4 @@
-# Google Fiber — First Contact Resolution (FCR) Analytics
+# Google Fiber BI Capstone Project — First Contact Resolution (FCR) Analytics
 
 > End-to-end analytics pipeline measuring repeat-caller behavior across three Google Fiber markets.
 > **Stack:** BigQuery → dbt → Tableau / Power BI / Looker Studio
@@ -18,12 +18,12 @@ Google Fiber's customer service team wants to **reduce repeat calls** and improv
 
 Source: Google Business Intelligence Certificate — Case Study 2 (Google Fiber).
 
-## 🎯 What This Project Delivers
+## 🎯 Project Delivers
 
 1. A **production-grade transformation layer** (dbt) that turns three raw call-center tables into a single, tested FCR mart
 2. **Data quality tests** (12+ assertions covering nulls, ranges, accepted values, uniqueness) wired into CI
 3. **Three dashboards** (Tableau, Power BI, Looker Studio) backed by the same trusted dataset
-4. **Stakeholder + ROCCC documentation** for the full BI lifecycle
+4. **Stakeholder + ROCCC data quality assessment documentation** for the full BI lifecycle
 
 ---
 
@@ -97,11 +97,10 @@ Why this layout? See [`docs/architecture.md`](docs/architecture.md) — every ch
 
 ### Prerequisites
 
-- Python 3.11+
 - Google Cloud SDK (`gcloud`)
 - BigQuery project with the `fiber` dataset (tables `market_1`, `market_2`, `market_3`)
 
-### Setup (one-time)
+### Setup
 
 ```bash
 # 1. Clone
@@ -171,21 +170,21 @@ Three independent dashboards backed by the same `mart_fiber_fcr` table — pick 
 
 | BI Tool             | Status                | Folder                                    |
 |---------------------|-----------------------|-------------------------------------------|
-| **Tableau**         | ✅ Built (.twb)        | [`dashboards/tableau/`](dashboards/tableau/)             |
-| **Power BI**        | 🚧 In progress        | [`dashboards/powerbi/`](dashboards/powerbi/)             |
-| **Looker Studio**   | 🚧 In progress        | [`dashboards/looker_studio/`](dashboards/looker_studio/) |
+| **Tableau**         | ✅ Built (.twbx)      | [`dashboards/tableau/`](dashboards/tableau/)             |
+| **Power BI**        | ✅ Built (.pbix)      | [`dashboards/powerbi/`](dashboards/powerbi/)             |
+| **Looker Studio**   | ✅ Built (Data Studio)      | [`dashboards/looker_studio/`](dashboards/looker_studio/) |
 
-Lo-fi mockups from the design phase: [`dashboards/mockups/`](dashboards/mockups/).
+Lo-fidelity mockups from the design phase: [`dashboards/mockups/`](dashboards/mockups/).
 
 ---
 
-## 🗺️ Project Phases (GBI Methodology)
+## 🗺️ Project Phases
 
 This project follows the **Capture → Analyze → Monitor** lifecycle from the Google Business Intelligence Certificate. The mapping to engineering folders:
 
 | GBI Phase    | What was done                                                   | Where it lives                         |
 |--------------|-----------------------------------------------------------------|----------------------------------------|
-| **Capture**  | Stakeholder + project requirements, strategy doc, ROCCC assessment | `docs/`                              |
+| **Capture**  | Stakeholder + project requirements, strategy doc, ROCCC data quality assessment | `docs/`                              |
 | **Analyze**  | Raw SQL exploration → dbt models → DQ tests                     | `sql/` (legacy) + `dbt/` (production)  |
 | **Monitor**  | Three dashboards + lo-fi mockups                                | `dashboards/`                          |
 
@@ -201,8 +200,8 @@ Full rationale: [`docs/phase_mapping.md`](docs/phase_mapping.md).
 | Transform    | dbt-bigquery 1.8                                  | SQL-native, version-controlled, testable  |
 | DQ Tests     | dbt-utils, dbt-expectations                       | Great-Expectations-style assertions in dbt|
 | CI/CD        | GitHub Actions                                    | Auto-test on every PR / push to main      |
-| BI           | Tableau / Power BI / Looker Studio                | Same mart, three audiences                |
-| Docs         | Markdown + .docx originals                        | GitHub-rendered + Word for stakeholders   |
+| BI           | Tableau / Power BI / Looker Studio                | Same mart, three dashboards                |
+| Docs         | Markdown + .docx originals                        | GitHub-rendered + Word for delivery to stakeholder   |
 
 ---
 
