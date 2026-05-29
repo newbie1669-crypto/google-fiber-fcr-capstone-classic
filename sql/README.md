@@ -1,6 +1,6 @@
 # Legacy SQL — pre-dbt reference
 
-These are the **original SQL files** written during exploratory analysis, before the project was migrated to dbt. They are kept for **reference and storytelling**, not for production use.
+These are the **original SQL files** written during exploratory analysis, before the project was migrated to dbt. They are kept for **reference and storytelling**, not for production purpose.
 
 ```
 sql/
@@ -8,7 +8,7 @@ sql/
 └── 02_data_quality_check.sql          Manual DQ checks (CHECK 1–7)
 ```
 
-## Why keep them?
+## Why keep this?
 
 For a portfolio reviewer, the progression `raw SQL → dbt project` shows:
 
