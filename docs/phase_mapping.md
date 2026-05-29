@@ -10,7 +10,7 @@ This project follows the **Capture → Analyze → Monitor** lifecycle taught in
 |------------|------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
 | **1. Capture** | `docs/`                                          | Stakeholder requirements, project requirements, ROCCC data assessment, data dictionary, architecture doc  |
 | **2. Analyze** | `sql/` + `dbt/` + `data/samples/`                | Legacy exploratory SQL → production dbt models (staging + marts) + 12 DQ tests + sample CSV               |
-| **3. Monitor** | `dashboards/`                                    | Three BI dashboards (Tableau, Power BI, Looker Studio) + lo-fi mockups + GitHub Actions CI                |
+| **3. Monitor** | `dashboards/`                                    | Three BI dashboards (Tableau, Power BI, Data Studio) + lo-fi mockups + GitHub Actions CI                |
 
 ## What was done in each phase
 
@@ -39,7 +39,7 @@ Monitor is about putting the answers in front of stakeholders and keeping them f
 
 - **`dashboards/tableau/`** — the primary deliverable as requested by stakeholders (`.twb`)
 - **`dashboards/powerbi/`** — second BI version
-- **`dashboards/looker_studio/`** — third BI version (browser-shareable)
+- **`dashboards/Data_studio/`** — third BI version (browser-shareable)
 - **`dashboards/mockups/`** — lo-fi mockups from the design phase, kept for context
 - **`.github/workflows/`** — CI that re-runs `dbt run + dbt test` on every push, so dashboards never read stale or broken data
 
