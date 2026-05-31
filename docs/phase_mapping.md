@@ -1,6 +1,6 @@
-# GBI Phase ↔ Engineering Folder Mapping
+# GBI Phase Folder Mapping
 
-This project follows the **Capture → Analyze → Monitor** lifecycle taught in the Google Business Intelligence Certificate. The engineering layout uses standard data-engineering folder names (so it reads naturally to data engineers and reviewers), but every GBI phase is preserved and traceable.
+This project follows the **Capture → Analyze → Monitor** lifecycle taught in the Google Business Intelligence Certificate. The engineering layout uses standard data-engineering folder names, but every GBI phase is preserved and traceable.
 
 ---
 
@@ -37,9 +37,9 @@ The Analyze phase translates the business question into queries and a tested dat
 
 Monitor is about putting the answers in front of stakeholders and keeping them fresh:
 
-- **`dashboards/tableau/`** — the primary deliverable as requested by stakeholders (`.twb`)
+- **`dashboards/tableau/`** — the primary deliverable as requested by stakeholders (`.twbx`)
 - **`dashboards/powerbi/`** — second BI version
-- **`dashboards/Data_studio/`** — third BI version (browser-shareable)
+- **`dashboards/data_studio/`** — third BI version (browser-shareable)
 - **`dashboards/mockups/`** — lo-fi mockups from the design phase, kept for context
 - **`.github/workflows/`** — CI that re-runs `dbt run + dbt test` on every push, so dashboards never read stale or broken data
 

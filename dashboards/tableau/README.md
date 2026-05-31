@@ -1,20 +1,18 @@
 # Tableau Dashboard — Google Fiber FCR
 
-Primary deliverable, as requested by the original stakeholder spec.
+Primary deliverable, as requested by the original stakeholder from the capstone project.
 
-```
-tableau/
-├── Google_Fiber_FCR_Dashboard.twb     workbook (uncompressed)
-├── screenshots/                       previews for the root README
-└── README.md                          you are here
-```
+## How I connect Power BI to GCP 
 
-## Connect to the dbt mart
-
-1. Open the `.twb` in Tableau Desktop or Tableau Public.
+1. Open the workbook in Tableau Desktop (**note :  public version does not natively support BigQuery connection**).
 2. If prompted for a data source: **Connect → Google BigQuery**.
 3. Authenticate to your GCP project (OAuth).
-4. Project: `your-gcp-project-id`
-5. Dataset: `dbt_prod` (or `dbt_dev` if developing)
-6. Table: `mart_fiber_fcr`
+4. Choose Project
+5. Choose Dataset
+6. Choose Table
 7. Refresh the workbook.
+8. Do the visuals and dashboard
+
+## Note
+
+The Tableau dashboard looks different from the other two because it was built first long before this repository was created and closely followed Google's exemplar. (It's OG!!!)

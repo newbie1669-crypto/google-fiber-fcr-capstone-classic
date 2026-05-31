@@ -1,6 +1,6 @@
-# Legacy SQL — pre-dbt reference
+# Legacy SQL — pre-dbt work
 
-These are the **original SQL files** written during exploratory analysis, before the project was migrated to dbt. They are kept for **reference and storytelling**, not for production purpose.
+The **original SQL files** written to finish my certificate long before the project was migrated to dbt. They are kept for **reference, learning and storytelling**, not for production purpose.
 
 ```
 sql/
@@ -8,15 +8,15 @@ sql/
 └── 02_data_quality_check.sql          Manual DQ checks (CHECK 1–7)
 ```
 
-## Why keep this?
+## Why do I keep this?
 
-For a portfolio reviewer, the progression `raw SQL → dbt project` shows:
+To see my progression from `raw SQL` to `dbt project` and learning :
 
-1. The ability to write working SQL against BigQuery directly.
-2. The judgment to recognize when raw SQL stops scaling and adopt a transformation framework.
-3. A real example of refactoring analytics code into a tested, version-controlled, modular form.
+1. SQL in BigQuery.
+2. What to do when pure SQL stops scaling and adopt a new transformation framework.
+3. An example of refactoring analytics code into a tested, version-controlled, modular form.
 
-## Mapping to the dbt version
+## Mapping SQL to the dbt
 
 | Legacy file                          | Replaced by                                                              |
 |--------------------------------------|---------------------------------------------------------------------------|
@@ -28,7 +28,3 @@ For a portfolio reviewer, the progression `raw SQL → dbt project` shows:
 | `02_data_quality_check.sql` — CHECK 5 (negatives)  | `dbt_utils.expression_is_true: ">= 0"`                               |
 | `02_data_quality_check.sql` — CHECK 6 (categories) | `accepted_values`                                                    |
 | `02_data_quality_check.sql` — CHECK 7 (summary)    | `dbt/analyses/dq_summary_report.sql` + `macros/generate_dq_summary.sql` |
-
-## When to update these files
-
-**Don't.** They're a frozen reference. New work goes in `dbt/`. If you change source schemas, update the dbt project; the legacy SQL is historical.

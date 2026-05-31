@@ -1,6 +1,6 @@
-# Google Fiber FCR — dbt Project
+# Google Fiber FCR — dbt Project (the hardest part ?)
 
-Pipeline: **BigQuery (raw)** → **dbt staging** → **dbt mart** → **Tableau / Power BI / Looker Studio**
+Pipeline: **BigQuery (raw data)** → **dbt staging** → **dbt mart** → **Tableau / Power BI / Data Studio**
 
 > CI workflow (`dbt_ci.yml`) lives at the **repo root** under `.github/workflows/`, not inside this folder — GitHub Actions only discovers workflows at the root.
 
@@ -31,9 +31,9 @@ dbt/
 
 ---
 
-## 1. Setup ครั้งแรก (ทำครั้งเดียว)
+## 1. First Setup (One-time)
 
-### ติดตั้ง dbt
+### Install dbt
 
 ```bash
 pip install dbt-bigquery
@@ -53,12 +53,12 @@ cp dbt/profiles.yml.example ~/.dbt/profiles.yml
 Replace the placeholders:
 
 ```yaml
-project: your-gcp-project-id   # ← your real GCP Project ID (e.g. gbi-20321)
+project: your-gcp-project-id   # ← your real GCP Project ID (e.g. gbi-test)
 ```
 
 For the `prod` target, also point `keyfile` to your service-account JSON.
 
-### Login GCP (สำหรับ dev)
+### Login GCP (for dev)
 
 ```bash
 gcloud auth application-default login
@@ -71,73 +71,73 @@ cd dbt
 dbt deps
 ```
 
-### ตรวจสอบ connection
+### Check connection
 
 ```bash
 dbt debug
 ```
 
-ผลที่คาดหวัง: `All checks passed!`
+Expected result : `All checks passed!`
 
 ---
 
-## 2. การรันประจำวัน
+## 2. Daily Run
 
-### รัน models ทั้งหมด (staging + marts)
+### Run all models (staging + marts)
 
 ```bash
 dbt run
 ```
 
-### รัน DQ tests ทั้งหมด
+### Run all DQ tests
 
 ```bash
 dbt test
 ```
 
-ถ้า test ผ่าน:
+If the test pass :
 ```
 Completed successfully
 Done. PASS=12 WARN=0 ERROR=0 SKIP=0 TOTAL=12
 ```
 
-ถ้า test ไม่ผ่าน:
+If the test fail:
 ```
 Failure in test not_null_mart_fiber_fcr_date_created (...)
   Got 5 results, configured to fail if != 0
 ```
 
-### รันทั้งคู่ในคำสั่งเดียว
+### Run + test in one command
 
 ```bash
-dbt build   # = dbt run + dbt test รวมกัน
+dbt build   # = both dbt run + dbt test
 ```
 
 ---
 
-## 3. คำสั่งที่ใช้บ่อย
+## 3. Frequently used command
 
-| คำสั่ง | ความหมาย |
+| command | description |
 |--------|-----------|
-| `dbt run` | รัน models ทั้งหมด |
-| `dbt test` | รัน DQ tests ทั้งหมด |
-| `dbt build` | run + test รวม |
-| `dbt run -s stg_market_1` | รันเฉพาะ model นี้ |
-| `dbt test -s mart_fiber_fcr` | test เฉพาะ mart |
-| `dbt run --target prod` | รันบน production dataset |
-| `dbt docs generate` | สร้าง documentation site |
-| `dbt docs serve` | เปิด docs ที่ localhost:8080 |
+| `dbt run` | Run all models |
+| `dbt test` | Run all DQ tests  |
+| `dbt build` | Run + test |
+| `dbt run -s stg_market_1` | Run specific mode |
+| `dbt test -s mart_fiber_fcr` | Test only mart |
+| `dbt run --target prod` | Run on production dataset |
+| `dbt docs generate` | Create documentation site |
+| `dbt docs serve` | Open docs at localhost:8080 |
 | `dbt compile --select dq_summary_report` | compile DQ summary SQL |
 
 ---
 
-## 4. ดู DQ Summary Report (ad-hoc)
+## 4. See DQ Summary Report (ad-hoc)
 
 ```bash
 dbt compile --select dq_summary_report
 ```
 
-แล้ว copy SQL จาก `target/compiled/.../dq_summary_report.sql` ไปรันใน BigQuery Console
+then copy SQL from `target/compiled/.../dq_summary_report.sql` run on BigQuery Console
 
 ---
 
@@ -152,11 +152,11 @@ Per-tool setup guides live in `dashboards/tableau/`, `dashboards/powerbi/`, and 
 
 Columns ready to use in any BI tool:
 
-| Column | ใช้ทำ |
+| Column | purpose |
 |--------|-------|
-| `fcr_day1_rate` | KPI card FCR หลัก |
+| `fcr_day1_rate` | KPI card FCR |
 | `fcr_7day_rate` | KPI card 7-day FCR |
-| `repeat_rate_day1..7` | Line chart แสดง decay curve |
+| `repeat_rate_day1..7` | Line chart to show decay curve |
 | `new_market` | Filter / breakdown |
 | `new_type` | Filter / breakdown |
 | `date_created` | Time series axis |
@@ -180,12 +180,12 @@ On every push or PR to `main`, GitHub Actions runs `.github/workflows/dbt_ci.yml
 
 ---
 
-## 7. DQ Tests ที่ครอบคลุม (map จาก CHECK เดิม)
+## 7. DQ Tests
 
-| CHECK เดิม | dbt test ที่ใช้ |
+| CHECK | dbt test used |
 |-----------|----------------|
-| CHECK 1: rows by market | `dbt run` + ดูใน BigQuery |
-| CHECK 2: NULL checks | `not_null` ทุก column |
+| CHECK 1: rows by market | `dbt run` + see in BigQuery |
+| CHECK 2: NULL checks | `not_null` all column |
 | CHECK 3: duplicates | `unique_combination_of_columns` |
 | CHECK 4: date range | `dbt_expectations.expect_column_values_to_be_between` |
 | CHECK 5: negatives | `expression_is_true: ">= 0"` |
