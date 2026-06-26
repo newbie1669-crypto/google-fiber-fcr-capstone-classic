@@ -1,5 +1,0 @@
-packages:
-  - package: dbt-labs/dbt_utils
-    version: [">=1.0.0", "<2.0.0"]    # utility macros เช่น expression_is_true
-  - package: calogica/dbt_expectations
-    version: [">=0.10.0", "<1.0.0"]   # Great Expectations-style tests ใน dbt

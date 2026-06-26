@@ -1,12 +1,6 @@
-# ============================================================
 # .gitignore — Google Fiber FCR Capstone
-# ============================================================
-# Block secrets, build artifacts, and OS junk
-# ============================================================
 
-# ── Secrets / Credentials ───────────────────────────────────
-# NEVER commit these. profiles.yml lives at ~/.dbt/profiles.yml only.
-**/profiles.yml
+# ── Secrets / Credentials ──
 .env
 .env.*
 !.env.example
@@ -17,13 +11,7 @@ service-account*.json
 *-credentials.json
 secrets/
 
-# ── dbt build artifacts ─────────────────────────────────────
-dbt/target/
-dbt/dbt_packages/
-dbt/logs/
-dbt/.user.yml
-
-# ── Python ──────────────────────────────────────────────────
+# ── Python ──
 __pycache__/
 *.py[cod]
 *$py.class
@@ -33,11 +21,11 @@ __pycache__/
 venv/
 env/
 
-# ── Jupyter ─────────────────────────────────────────────────
+# ── Jupyter ──
 .ipynb_checkpoints/
 *.ipynb_checkpoints
 
-# ── BI tool temp files ──────────────────────────────────────
+# ── BI tool temp files ──
 # Tableau backup/lock
 *.twbx.bak
 *.twb.lock
@@ -45,7 +33,7 @@ env/
 *.pbix.tmp
 ~$*.pbix
 
-# ── OS junk ─────────────────────────────────────────────────
+# ── OS junk ──
 .DS_Store
 Thumbs.db
 Desktop.ini
@@ -53,12 +41,12 @@ Desktop.ini
 *.swp
 *.swo
 
-# ── IDE / Editor ────────────────────────────────────────────
+# ── IDE / Editor ──
 .vscode/
 .idea/
 *.iml
 .cursor/
 
-# ── Misc ────────────────────────────────────────────────────
+# ── Misc ──
 *.log
 *.tmp
