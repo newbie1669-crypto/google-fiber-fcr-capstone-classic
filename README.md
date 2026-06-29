@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Google Fiber - First Call Resolution (FCR) Capstone Project
 
 > **Capstone project สำหรับ [Google Business Intelligence Professional Certificate](https://www.coursera.org/professional-certificates/google-business-intelligence)**  
