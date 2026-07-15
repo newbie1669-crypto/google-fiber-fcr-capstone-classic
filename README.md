@@ -10,13 +10,13 @@
 
 This project is the original capstone, built as intended by the certificates (I consider it legacy for myself).
 
-- You can view the modernized version at — [`This Link`]('') — the differences include:
+- You can view the modernized version at — [`This Link`](https://github.com/newbie1669-crypto/google-fiber-fcr-capstone-dbt) — the differences include:
   
   - A real `data pipeline` (the original capstone project has no exact pipeline at all) built with **`dbt` (data build tool)**, connecting everything from the source on `BigQuery` all the way to the dashboard on the BI tool
   - Systematic, automated testing — no more manually running queries to check things like this
   - A docs site and clear lineage visualization
   - CI/CD via GitHub Actions, allow team collaboration and pretty scalable
-- The [`dbt version`]('') is far better than this one, but it requires some background knowledge to understand
+- The [`dbt version`](https://github.com/newbie1669-crypto/google-fiber-fcr-capstone-dbt) is far better than this one, but it requires some background knowledge to understand
 
 ---
 
@@ -54,7 +54,7 @@ This project is the original capstone, built as intended by the certificates (I 
 - SQL query (UNION ALL & DQ check) → wrote `ROCCC docs` → loaded the results locally as a CSV
 - Imported the CSV into a dashboard tool (Tableau / Power BI / Data Studio) → calculated the project's metric (FCR) → built the dashboard
 
----
+---v
 
 ## **Results**
 
