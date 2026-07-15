@@ -1,10 +1,10 @@
 # Dashboards
 
-Three dashboards built on the **same** table. They answer the same business question with the same metrics.
+Three dashboards built on the **same** table. They answer the same business question.
 
-```
+```text
 dashboards/
-├── tableau/            *** original capstone project dashboard (it looks different from other)
+├── tableau/
 ├── powerbi/
 ├── data_studio/
 └── mockups/            lo-fi designs from the planning phase
@@ -12,12 +12,11 @@ dashboards/
 
 ## Three versions of dasboard description
 
-
-| BI Tool          | Description                      | Output format        |
-|------------------|----------------------------------|----------------------|
-| **Tableau**      | Interactive, polished, original design from the course examplar | `.twbx` |
-| **Power BI**     | Alternative version, interactive | `.pbix`|
-| **Data Studio** | Alternative version, browser-shareable, GCP-native | URL |
+| BI Tool | Description | Output format |
+| --- | --- | --- |
+| **Tableau** | Original | `.twbx` |
+| **Power BI** | Alternative version, interactive | `.pbix` |
+| **Data Studio** | Alternative version, browser-shareable | URL |
 
 ## Mockups
 
